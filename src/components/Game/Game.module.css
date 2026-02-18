@@ -1,0 +1,24 @@
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.topRow {
+  display: flex;
+  gap: var(--col-gap);
+  align-items: flex-start;
+}
+
+.spacer {
+  width: calc(var(--card-width) + var(--col-gap));
+  flex-shrink: 0;
+}
+
+.tableau {
+  display: flex;
+  gap: var(--col-gap);
+  align-items: flex-start;
+}

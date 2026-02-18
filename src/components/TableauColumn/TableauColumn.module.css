@@ -1,0 +1,14 @@
+.column {
+  width: var(--card-width);
+  position: relative;
+  flex-shrink: 0;
+  min-height: var(--card-height);
+}
+
+.emptySlot {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--card-radius);
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}

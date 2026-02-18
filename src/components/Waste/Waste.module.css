@@ -1,0 +1,13 @@
+.waste {
+  height: var(--card-height);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.empty {
+  width: var(--card-width);
+  height: var(--card-height);
+  border-radius: var(--card-radius);
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  flex-shrink: 0;
+}

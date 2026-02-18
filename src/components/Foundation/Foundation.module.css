@@ -1,0 +1,35 @@
+.foundation {
+  width: var(--card-width);
+  height: var(--card-height);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.empty {
+  width: var(--card-width);
+  height: var(--card-height);
+  border-radius: var(--card-radius);
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.placeholder {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.count {
+  position: absolute;
+  bottom: 5px;
+  right: 8px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 10px;
+  font-weight: 600;
+  z-index: 1;
+  pointer-events: none;
+}

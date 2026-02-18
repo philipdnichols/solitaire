@@ -1,0 +1,29 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --card-width: 80px;
+  --card-height: 112px;
+  --card-radius: 8px;
+  --face-down-offset: 18px;
+  --face-up-offset: 28px;
+  --col-gap: 10px;
+  --table-green: #2d6a4f;
+  --table-green-dark: #1b4332;
+}
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    sans-serif;
+  background: var(--table-green-dark);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
