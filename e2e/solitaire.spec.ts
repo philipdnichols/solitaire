@@ -50,9 +50,7 @@ async function getState(page: Page): Promise<GameState> {
 
 async function loadState(page: Page, state: GameState | WinState): Promise<void> {
   await page.evaluate((s) => {
-    const d = (window as unknown as Record<string, unknown>).__dispatch as (
-      a: unknown,
-    ) => void;
+    const d = (window as unknown as Record<string, unknown>).__dispatch as (a: unknown) => void;
     d({ type: '__TEST_LOAD_STATE', state: s });
   }, state);
   // Wait for React to re-render and __gameState to reflect the new state
@@ -70,8 +68,9 @@ test.describe('Solitaire', () => {
     await page.goto(APP_URL);
     // Wait for app to initialise and expose __gameState and __dispatch
     await page.waitForFunction(
-      () => !!(window as unknown as Record<string, unknown>).__gameState &&
-             !!(window as unknown as Record<string, unknown>).__dispatch,
+      () =>
+        !!(window as unknown as Record<string, unknown>).__gameState &&
+        !!(window as unknown as Record<string, unknown>).__dispatch,
     );
   });
 
@@ -165,10 +164,7 @@ test.describe('Solitaire', () => {
     await loadState(page, {
       ...base,
       status: 'playing',
-      tableau: [
-        [{ suit: 'spades', rank: 7, faceUp: false }],
-        [], [], [], [], [], [],
-      ],
+      tableau: [[{ suit: 'spades', rank: 7, faceUp: false }], [], [], [], [], [], []],
       selection: null,
       moves: 1,
     });
@@ -189,10 +185,7 @@ test.describe('Solitaire', () => {
       stock: [],
       waste: [{ suit: 'spades', rank: 8, faceUp: true }],
       foundations: [[], [], [], []],
-      tableau: [
-        [{ suit: 'hearts', rank: 9, faceUp: true }],
-        [], [], [], [], [], [],
-      ],
+      tableau: [[{ suit: 'hearts', rank: 9, faceUp: true }], [], [], [], [], [], []],
       selection: null,
       moves: 1,
     });
@@ -224,7 +217,11 @@ test.describe('Solitaire', () => {
           { suit: 'spades', rank: 10, faceUp: true },
         ],
         [{ suit: 'clubs', rank: 12, faceUp: true }],
-        [], [], [], [], [],
+        [],
+        [],
+        [],
+        [],
+        [],
       ],
       selection: null,
       moves: 5,
@@ -294,10 +291,7 @@ test.describe('Solitaire', () => {
       stock: [],
       waste: [{ suit: 'spades', rank: 7, faceUp: true }],
       foundations: [[], [], [], []],
-      tableau: [
-        [{ suit: 'hearts', rank: 5, faceUp: true }],
-        [], [], [], [], [], [],
-      ],
+      tableau: [[{ suit: 'hearts', rank: 5, faceUp: true }], [], [], [], [], [], []],
       selection: null,
       moves: 1,
     });
